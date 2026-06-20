@@ -37,7 +37,11 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px 0;
+            padding: 8px 0 !important; /* Dibuat lebih ramping */
+            position: fixed; /* Memastikan navbar tetap di atas */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
         .navbar-brand {
             font-weight: 800;
@@ -55,7 +59,7 @@
             border-radius: 20px !important;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
             padding: 35px;
-            margin-top: 50px;
+            margin-top: 100px !important; /* Jarak dijauhkan agar tidak tenggelam */
             margin-bottom: 50px;
         }
 
@@ -131,6 +135,37 @@
 
         .text-muted-glass { color: #94a3b8 !important; }
         .text-neon-blue { color: #38bdf8 !important; }
+
+        /* Gaya Dropdown Tema Glassmorphism Baru */
+        .dropdown-menu-glass {
+            background-color: rgba(15, 23, 42, 0.95) !important;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            padding: 8px 0;
+        }
+        .dropdown-item-glass {
+            color: #cbd5e1 !important;
+            font-weight: 500;
+            padding: 10px 20px;
+            transition: all 0.2s;
+        }
+        .dropdown-item-glass:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff !important;
+        }
+        .dropdown-item-danger {
+            color: #ff7b72 !important;
+        }
+        .dropdown-item-danger:hover {
+            background-color: rgba(239, 68, 68, 0.15);
+        }
+        
+        /* Menghilangkan panah bawaan bootstrap agar lebih bersih */
+        .dropdown-toggle::after {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -138,13 +173,28 @@
     <nav class="navbar navbar-expand-lg navbar-user shadow-sm">
         <div class="container px-4">
             <a class="navbar-brand" href="#"><i class="bi bi-controller text-primary me-2"></i>TOPVIA</a>
-            <div class="d-flex align-items-center gap-2">
-                <span class="text-light me-3" style="font-size: 0.9rem; opacity: 0.9;">
-                    <i class="bi bi-person-fill text-primary me-1"></i> Sesi: <strong><%= userLogin.getUsername() %></strong>
-                </span>
-                <a href="riwayat.jsp" class="btn btn-nav-outline btn-sm px-3 py-2 fw-semibold">Riwayat</a>
-                <a href="LogoutServlet" class="btn btn-nav-danger btn-sm px-3 py-2 fw-semibold">Akhiri Sesi</a>
+            
+            <div class="dropdown ms-auto">
+                <button class="btn btn-nav-outline dropdown-toggle d-flex align-items-center gap-2 px-3 py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person-circle text-primary"></i>
+                    <span class="text-light" style="font-size: 0.9rem;">Akun: <strong><%= userLogin.getUsername() %></strong></span>
+                    <i class="bi bi-list fs-5 ms-1"></i> </button>
+                
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-glass mt-2">
+                    <li>
+                        <a class="dropdown-item dropdown-item-glass" href="riwayat.jsp">
+                            <i class="bi bi-clock-history me-2 text-info"></i>Riwayat Transaksi
+                        </a>
+                    </li>
+                    <li><hr class="dropdown-divider" style="border-color: rgba(255,255,255,0.1);"></li>
+                    <li>
+                        <a class="dropdown-item dropdown-item-glass dropdown-item-danger" href="LogoutServlet">
+                            <i class="bi bi-box-arrow-right me-2"></i>Keluar
+                        </a>
+                    </li>
+                </ul>
             </div>
+            
         </div>
     </nav>
 

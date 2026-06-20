@@ -79,7 +79,7 @@ public class LayananServlet extends HttpServlet {
             }
             
             // Sukses tersimpan di database MySQL, alihkan kembali ke dasbor utama admin
-            response.sendRedirect("adminDashboard.jsp?status=layanan_ditambah");
+            response.sendRedirect("katalogLayanan.jsp?status=layanan_ditambah");
             
         } catch (Exception e) {
             System.out.println("CRITICAL ERROR SAAT TAMBAH PRODUK:");

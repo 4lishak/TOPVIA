@@ -215,8 +215,8 @@
         
         <div class="row align-items-center mb-4">
             <div class="col-md-7">
-                <h3 class="fw-bold text-white mb-1">Dasbor Operasional</h3>
-                <p class="text-muted-glass mb-0" style="font-size: 0.9rem;">Ringkasan aktivitas dan arus kas sistem database Topvia.</p>
+                <h3 class="fw-bold text-white mb-1">Dashboard Operasional</h3>
+                <p class="text-muted-glass mb-0" style="font-size: 0.9rem;">Aktivitas sistem Topvia.</p>
             </div>
             <div class="col-md-5 text-md-end mt-3 mt-md-0 d-flex justify-content-md-end gap-2">
                 <a href="tambahLayanan.jsp" class="btn btn-modern text-decoration-none"><i class="bi bi-plus-lg me-1"></i> Tambah Layanan</a>

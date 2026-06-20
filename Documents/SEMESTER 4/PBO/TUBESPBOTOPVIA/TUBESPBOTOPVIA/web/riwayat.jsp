@@ -140,7 +140,7 @@
             <a class="navbar-brand" href="dashboard.jsp"><i class="bi bi-controller text-primary me-2"></i>TOPVIA</a>
             <div class="d-flex align-items-center gap-2">
                 <span class="text-light me-3" style="font-size: 0.9rem; opacity: 0.9;">
-                    <i class="bi bi-person-fill text-primary me-1"></i> Sesi: <strong><%= currentUser %></strong>
+                    <i class="bi bi-person-fill text-primary me-1"></i> Akun: <strong><%= currentUser %></strong>
                 </span>
                 <a href="dashboard.jsp" class="btn btn-nav-outline btn-sm px-3 py-2 fw-semibold">Katalog</a>
             </div>
